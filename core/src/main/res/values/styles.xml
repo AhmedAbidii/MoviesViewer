@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="NoToolbarTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="NoToolbarTheme.TranslucentBars">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="RecyclerView">
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="LinearVerticalRecyclerView" parent="RecyclerView">
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+    </style>
+
+    <style name="LinearHorizontalRecyclerView" parent="LinearVerticalRecyclerView">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ClickableView">
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+</resources>

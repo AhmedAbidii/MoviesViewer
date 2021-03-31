@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aabidi.moviesviewer.movies" >
+
+    <application>
+
+        <activity
+            android:name=".commons.ui.HomeActivity"
+            android:theme="@style/NoToolbarTheme.TranslucentBars"
+            />
+
+    </application>
+
+</manifest>

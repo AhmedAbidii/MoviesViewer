@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nsvParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="@color/colorPrimary"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="?attr/homeAsUpIndicator"
+            />
+
+        <View
+            android:id="@+id/crNewBackground"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbarId"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl30"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"
+            />
+
+        <ImageView
+            android:id="@+id/ivBackdrop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="@string/aspect_ratio_movie_backdrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbarId"
+            tools:background="@android:color/black"
+            tools:src="@drawable/ic_image"
+            tools:tint="@color/colorAccent"
+            />
+
+        <ImageView
+            android:id="@+id/ivPoster"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="@id/ivBackdrop"
+            app:layout_constraintEnd_toStartOf="@id/gl30"
+            app:layout_constraintStart_toEndOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
+            />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:ellipsize="end"
+            android:gravity="bottom"
+            android:lineSpacingExtra="@dimen/line_spacing_small"
+            android:maxLines="@integer/max_lines_title"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_medium"
+            app:layout_constraintBottom_toBottomOf="@id/ivPoster"
+            app:layout_constraintEnd_toStartOf="@id/glRight"
+            app:layout_constraintStart_toEndOf="@id/gl30"
+            app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
+            tools:text="Fight Club"
+            />
+
+        <TextView
+            android:id="@+id/tvOverviewTitle"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/movie_details_overview"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_medium_small"
+            app:layout_constraintStart_toEndOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/ivPoster"
+            />
+
+        <TextView
+            android:id="@+id/tvOverviewDesc"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:lineSpacingExtra="@dimen/line_spacing_small"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_medium_small"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/tvOverviewTitle"
+            tools:text="This is some long overview text for the movie description."
+            />
+
+        <RatingBar
+            android:id="@+id/rating_bar_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_xl"
+            android:gravity="center"
+            android:numStars="5"
+            android:orientation="horizontal"
+            android:paddingVertical="@dimen/padding_medium"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/padding_medium"
+            android:saveEnabled="true"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/tvOverviewDesc"
+            />
+
+        <ProgressBar
+            android:id="@+id/cpbMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <View
+            android:id="@+id/vNavigationBarScrollSpace"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rating_bar_view"
+            />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupDetails"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tvTitle,tvOverviewTitle,tvOverviewDesc,rating_bar_view"
+            tools:visibility="visible"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

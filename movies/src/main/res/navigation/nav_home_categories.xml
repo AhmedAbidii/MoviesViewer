@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home_categories"
+    app:startDestination="@id/movieCategory">
+
+    <fragment
+        android:id="@+id/movieCategory"
+        android:name="com.aabidi.moviesviewer.movies.listing.ui.MoviesListingFragment"
+        tools:layout="@layout/fragment_movies_listing">
+
+        <action
+            android:id="@+id/navigateToMoviesListing"
+            app:destination="@id/movieCategory" />
+
+    </fragment>
+
+</navigation>
